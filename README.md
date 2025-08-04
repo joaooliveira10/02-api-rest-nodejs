@@ -91,8 +91,7 @@ src/
 1. **Clone o repositório**
 
 ```bash
-git clone <url-do-repositorio>
-cd 02-api-rest-nodejs
+git clone https://github.com/joaooliveira10/02-api-rest-nodejs
 ```
 
 2. **Instale as dependências**
