@@ -1,0 +1,282 @@
+# ==================================
+# LOGS E RELATÓRIOS
+# ==================================
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+pnpm-debug.log*
+
+# Relatórios de diagnóstico (https://nodejs.org/api/report.html)
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ==================================
+# DADOS DE EXECUÇÃO
+# ==================================
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# ==================================
+# COBERTURA DE TESTES
+# ==================================
+# Diretório de cobertura usado por ferramentas como istanbul
+lib-cov
+coverage
+*.lcov
+.nyc_output
+
+# ==================================
+# DEPENDÊNCIAS E CACHE
+# ==================================
+# Diretórios de dependências
+node_modules/
+jspm_packages/
+bower_components/
+
+# Diretório de dependências do Snowpack
+web_modules/
+
+# Cache do TypeScript
+*.tsbuildinfo
+
+# Cache opcional do npm
+.npm
+
+# Cache opcional do eslint
+.eslintcache
+
+# Cache opcional do stylelint
+.stylelintcache
+
+# Cache do Microbundle
+.rpt2_cache/
+.rts2_cache_cjs/
+.rts2_cache_es/
+.rts2_cache_umd/
+
+# Cache do Parcel
+.cache
+.parcel-cache
+
+# ==================================
+# HISTÓRICO E CONFIGURAÇÕES
+# ==================================
+# Histórico opcional do REPL
+.node_repl_history
+
+# Configuração do node-waf
+.lock-wscript
+
+# Armazenamento intermediário do Grunt
+.grunt
+
+# ==================================
+# BUILDS E DISTRIBUIÇÃO
+# ==================================
+# Addons binários compilados
+build/
+build/Release
+dist/
+out/
+
+# Saída do 'npm pack'
+*.tgz
+
+# ==================================
+# GERENCIADORES DE PACOTES
+# ==================================
+# Arquivo de integridade do Yarn
+.yarn-integrity
+
+# Yarn v2
+.yarn/cache
+.yarn/unplugged
+.yarn/build-state.yml
+.yarn/install-state.gz
+.pnp.*
+
+# ==================================
+# VARIÁVEIS DE AMBIENTE (CRÍTICO!)
+# ==================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+.environment
+
+# ==================================
+# FRAMEWORKS ESPECÍFICOS
+# ==================================
+# Next.js
+.next
+.next/
+
+# Nuxt.js
+.nuxt
+
+# Gatsby
+# .cache/ (já incluído acima)
+# public (descomente se usar Gatsby)
+
+# VuePress
+.vuepress/dist
+.temp
+
+# Docusaurus
+.docusaurus
+
+# ==================================
+# SERVERLESS E CLOUD
+# ==================================
+.serverless/
+
+# ==================================
+# BUNDLERS E FERRAMENTAS
+# ==================================
+# FuseBox
+.fusebox/
+
+# ==================================
+# BANCOS DE DADOS LOCAIS
+# ==================================
+# DynamoDB Local
+.dynamodb/
+
+# ==================================
+# EDITORES E FERRAMENTAS
+# ==================================
+# TernJS
+.tern-port
+
+# Versões do VSCode para testes de extensões
+.vscode-test
+
+# ==================================
+# SISTEMAS OPERACIONAIS
+# ==================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.tmp
+*.temp
+
+# Linux
+*~
+
+# ==================================
+# IDEs E EDITORES
+# ==================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sublime-project
+*.sublime-workspace
+
+# ==================================
+# ARQUIVOS TEMPORÁRIOS
+# ==================================
+tmp/
+temp/
+*.temp
+*.tmp
+
+# ==================================
+# BANCO DE DADOS E ARQUIVOS SENSÍVEIS
+# ==================================
+# Bancos de dados SQLite
+*.db
+*.sqlite
+*.sqlite3
+db.json
+app.db
+database.db
+
+# Arquivos de configuração com dados sensíveis
+config.json
+secrets.json
+credentials.json
+
+# Chaves SSH e certificados
+*.pem
+*.p12
+*.key
+*.crt
+*.cert
+*.cer
+id_rsa
+id_dsa
+id_ed25519
+id_ecdsa
+
+# ==================================
+# UPLOADS E ARQUIVOS DO USUÁRIO
+# ==================================
+uploads/
+public/uploads/
+storage/
+files/
+
+# ==================================
+# ARQUIVOS DE BACKUP
+# ==================================
+*.backup
+*.bak
+*.old
+*.orig
+
+# ==================================
+# LOGS ESPECÍFICOS DO PROJETO
+# ==================================
+error.log
+access.log
+debug.log
+
+# ==================================
+# DOCKER E CONTAINERIZAÇÃO
+# ==================================
+.dockerignore
+docker-compose.override.yml
+.docker/
+
+# ==================================
+# MONITORAMENTO E PROFILING
+# ==================================
+*.heapsnapshot
+*.cpuprofile
+
+# ==================================
+# COVERAGE E TESTES
+# ==================================
+jest-coverage/
+cypress/videos/
+cypress/screenshots/
+test-results/
+
+# ==================================
+# ARQUIVOS ESPECÍFICOS DO PROJETO
+# ==================================
+# Adicione aqui arquivos específicos do seu projeto
+# Exemplo:
+# meu-arquivo-secreto.txt
+# config-local.js
+db
