@@ -279,4 +279,15 @@ test-results/
 # Exemplo:
 # meu-arquivo-secreto.txt
 # config-local.js
-db
+# Dependencies
+node_modules
+
+# Database
+db/*.db
+
+# Environment
+.env
+.env.test
+
+# Build
+build

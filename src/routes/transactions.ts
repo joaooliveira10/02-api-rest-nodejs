@@ -1,12 +1,23 @@
-import { randomUUID } from 'crypto'
 import { FastifyInstance } from 'fastify'
+import { randomUUID } from 'node:crypto'
 import { z } from 'zod'
 import { knex } from '../database'
-import { checkSessionIdExists } from '../middlewares/check-session-id-exist'
+import { checkSessionIdExists } from '../middlewares/check-session-id-exists'
 
 // Cookies <-> Formas da gente manter contexto entre requisições
 // prettier-ignore
-export async function transactionRoutes(app: FastifyInstance) {
+
+// Tipos de Testes
+// Unitarios : Testa uma unidade da aplicação
+// Integração : Teste de comunicação entre duas ou mais unidades
+// E2E - ponta a ponta : Testes que simulam um usuario operando na nossa aplicação
+
+// E2E no front-end: Abre  a pagina de login, digita o texto de acesso do usuario com email e senha e clica no botão
+// E2E no back-end: Chamadas HTTP, WebSockects
+
+// Piramide de testes:  E2E (não dependem de nenhuma tecnologia, não dependem de arquitetura)
+
+export async function transactionsRoutes(app: FastifyInstance) {
   app.get(
     '/',
     {
@@ -29,10 +40,11 @@ export async function transactionRoutes(app: FastifyInstance) {
       preHandler: [checkSessionIdExists],
     },
     async (request) => {
-      const getTransactionParamsSchema = z.object({
-        id: z.uuid(), // em novas versoes do zod nao precisa passar z.string().uuid(),
+      const getTransactionsParamsSchema = z.object({
+        id: z.string().uuid(),
       })
-      const { id } = getTransactionParamsSchema.parse(request.params)
+
+      const { id } = getTransactionsParamsSchema.parse(request.params)
 
       const { sessionId } = request.cookies
 
@@ -43,7 +55,9 @@ export async function transactionRoutes(app: FastifyInstance) {
         })
         .first()
 
-      return { transaction }
+      return {
+        transaction,
+      }
     }
   )
 
@@ -71,6 +85,7 @@ export async function transactionRoutes(app: FastifyInstance) {
       amount: z.number(),
       type: z.enum(['credit', 'debit']),
     })
+
     const { title, amount, type } = createTransactionBodySchema.parse(
       request.body
     )
@@ -80,7 +95,7 @@ export async function transactionRoutes(app: FastifyInstance) {
     if (!sessionId) {
       sessionId = randomUUID()
 
-      reply.cookie('sessionId', sessionId, {
+      reply.setCookie('sessionId', sessionId, {
         path: '/',
         maxAge: 60 * 60 * 24 * 7, // 7 Dias    // 1 segundo * 1 minuto * 1 hora * 1 dia * 7 dias
       })
