@@ -2,7 +2,7 @@ import { FastifyReply, FastifyRequest } from 'fastify'
 // prettier-ignore
 export async function checkSessionIdExists(
   request: FastifyRequest,
-  reply: FastifyReply,
+  reply: FastifyReply
 ) {
   const sessionId = request.cookies.sessionId
 
